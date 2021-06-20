@@ -117,14 +117,13 @@ def game():
         if choice == "easy":
             print("Vous possédez un nombre de coups illimité")
             tirage_easy()
-            break
         elif choice == "normal":
             print("Vous possédez 15 coups")
             tirage_normal()
-            break
         elif choice == "hard":
             print("Vous possédez 5 coups")
             tirage_hard()
+        elif choice == "exit":
             break
         else:
             print("Choix non valide")
@@ -139,6 +138,6 @@ def game():
                 break
             else:
                 print("Choix non valide")
-
+        break
 
 game()
