@@ -101,7 +101,7 @@ def tirage_hard():
     tirage_ascendant(answer, coup)
 
 
-menu = """Menu
+menu = """- Menu -
 Pour sortir, tapez exit
 Pour jouer en mode facile, tapez easy
 Pour jouer en mode normal, tapez normal
