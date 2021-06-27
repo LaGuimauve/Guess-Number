@@ -1,8 +1,10 @@
 import random
 
+
 # import time
 
-alea = random.randint(1, 3)  # Nombre aléatoire entre 1 et 100
+
+alea = random.randint(1, 10)  # Nombre aléatoire entre 1 et 100
 
 
 def almost(answer):
@@ -15,6 +17,7 @@ def almost(answer):
 def tirage_easy():
     answer = 0
     coup = 0
+
     while answer != alea:
         answer = int(input())
         if answer - 50 > alea or answer + 50 < alea:
@@ -109,6 +112,21 @@ Pour jouer en mode difficile, tapez hard
 Que désirez-vous ?"""
 
 
+def retry():
+    choice = 0
+    while choice != "oui" or choice != "non":
+        print("""Recommencer ?
+            oui
+            non""")
+        choice = input()
+        if choice == "oui":
+            game()
+        elif choice == "non":
+            quit()
+        else:
+            print("Choix non valide")
+
+
 def game():
     choice = 0
     while choice != "exit":
@@ -124,20 +142,8 @@ def game():
             print("Vous possédez 5 coups")
             tirage_hard()
         elif choice == "exit":
-            break
+            quit()
         else:
             print("Choix non valide")
-        while choice != "oui" or choice != "non":
-            print("""Recommencer ?
-            oui
-            non""")
-            choice = input()
-            if choice == "oui":
-                game()
-            elif choice == "non":
-                break
-            else:
-                print("Choix non valide")
-        break
-
-game()
+            game()
+        retry()
